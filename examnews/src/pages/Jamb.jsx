@@ -72,6 +72,20 @@ const Jamb = () => {
                 <strong>Visit a CBT Center:</strong> Go to an <Link to="/jamb-centers" style={{color: '#0A3D91', textDecoration: 'underline'}}>accredited JAMB CBT center</Link> with your profile code and e-pin to complete your biometric capture and data entry. <a href="https://centres.jamb.gov.ng/public.php" target="_blank" rel="noopener noreferrer" style={{color: '#0A3D91', textDecoration: 'underline'}}>View official JAMB centers list</a>.
               </li>
             </ol>
+
+            <div style={{marginTop: '32px', marginBottom: '24px'}}>
+              <h3 style={{fontSize: '1.25rem', fontWeight: 600, marginBottom: '16px', color: '#1f2937'}}>Video Guide: JAMB Registration Step-by-Step</h3>
+              <div style={{position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden', maxWidth: '100%', background: '#000', borderRadius: '8px'}}>
+                <iframe 
+                  style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0}}
+                  src="https://www.youtube.com/embed/iT1d1kqZGh4" 
+                  title="A STEP BY STEP GUIDE" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  referrerPolicy="strict-origin-when-cross-origin" 
+                  allowFullScreen
+                />
+              </div>
+            </div>
           </section>
 
           <section className="section">
@@ -120,8 +134,8 @@ const Jamb = () => {
 
         <aside className="sidebar">
           <div className="sidebar-card" style={{background: '#f0fdf4', borderColor: '#16a34a'}}>
-            <h3 style={{display: 'flex', alignItems: 'center', gap: '8px', color: '#16a34a'}}>
-              <Calendar size={20}/> Key Dates 2026
+            <h3>
+              <Calendar size={20} style={{color: '#16a34a'}}/> Key Dates 2026
             </h3>
             <div style={{fontSize: '0.875rem'}}>
               <div style={{marginBottom: '16px', paddingBottom: '12px', borderBottom: '1px solid #e5e7eb'}}>
@@ -149,6 +163,7 @@ const Jamb = () => {
               <li><Link to="/admission-status"><span>Admission Status</span><ExternalLink size={14}/></Link></li>
               <li><Link to="/cut-off-marks"><span>Cut-off Marks</span><ExternalLink size={14}/></Link></li>
               <li><Link to="/jamb-centers"><span>CBT Centers</span><ExternalLink size={14}/></Link></li>
+              <li><Link to="/jamb-brochure"><span>Institution Brochure</span><ExternalLink size={14}/></Link></li>
             </ul>
           </div>
 

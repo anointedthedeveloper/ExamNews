@@ -51,7 +51,8 @@ const JambCenters = () => {
     setFetchError("");
     
     try {
-      const proxyUrl = 'https://api.allorigins.win/raw?url=';
+      // Use a more reliable proxy
+      const proxyUrl = 'https://corsproxy.io/?';
       const targetUrl = encodeURIComponent('https://centres.jamb.gov.ng/public.php');
       
       const response = await fetch(proxyUrl + targetUrl);

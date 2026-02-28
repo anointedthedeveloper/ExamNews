@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
@@ -20,6 +20,8 @@ const WaecTimetable = lazy(() => import("./pages/WaecTimetable"));
 const JambCenters = lazy(() => import("./pages/JambCenters"));
 const JambSyllabus = lazy(() => import("./pages/JambSyllabus"));
 const JambRegistration = lazy(() => import("./pages/JambRegistration"));
+const JambBrochure = lazy(() => import("./pages/JambBrochure"));
+const BrochureCourses = lazy(() => import("./pages/BrochureCourses"));
 const NecoTimetable = lazy(() => import("./pages/NecoTimetable"));
 const PostUtme = lazy(() => import("./pages/PostUtme"));
 const SearchResults = lazy(() => import("./pages/SearchResults"));
@@ -60,12 +62,23 @@ const LoadingFallback = () => (
 );
 
 function App() {
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'light' ? 'dark' : 'light');
+  };
+
   return (
     <ErrorBoundary>
-      <div className="app-wrapper">
+      <div className={`app-wrapper ${theme}`}>
         <PageIndicator />
         <ScrollToTop />
-        <Navbar />
+        <Navbar theme={theme} toggleTheme={toggleTheme} />
         <main>
           <Suspense fallback={<LoadingFallback />}>
             <Routes>
@@ -80,6 +93,8 @@ function App() {
               <Route path="/jamb-centers" element={<JambCenters />} />
               <Route path="/jamb-syllabus" element={<JambSyllabus />} />
               <Route path="/jamb-registration" element={<JambRegistration />} />
+              <Route path="/jamb-brochure" element={<JambBrochure />} />
+              <Route path="/jamb-brochure/courses/:id" element={<BrochureCourses />} />
               <Route path="/neco-timetable-2026" element={<NecoTimetable />} />
               <Route path="/post-utme" element={<PostUtme />} />
               <Route path="/search" element={<SearchResults />} />

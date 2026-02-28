@@ -1,14 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Menu, X, Search, MessageCircle, Coffee, ArrowUp } from "lucide-react";
+import { Menu, X, Search, MessageCircle, Coffee, Moon, Sun } from "lucide-react";
 import logo from "../assets/logo.png";
 import "../styles/Navbar.css";
 
-const Navbar = () => {
+const Navbar = ({ theme, toggleTheme }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const navigate = useNavigate();
+
+  // Close search on scroll or route change
+  useEffect(() => {
+    const handleScroll = () => setShowSearch(false);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -25,19 +32,16 @@ const Navbar = () => {
     { label: "Check JAMB Result", path: "/check-jamb-result" },
     { label: "JAMB CBT Centers", path: "/jamb-centers" },
     { label: "JAMB Syllabus", path: "/jamb-syllabus" },
-    { label: "JAMB Cut-Off Marks", path: "/cut-off-marks" },
+    { label: "JAMB Brochure", path: "/jamb-brochure" },
     { label: "WAEC Timetable 2026", path: "/waec-timetable-2026" },
-    { label: "WAEC Portal", path: "/waec" },
     { label: "NECO Updates", path: "/neco" },
-    { label: "NECO Timetable 2026", path: "/neco-timetable-2026" },
     { label: "Admission Status", path: "/admission-status" },
     { label: "Post-UTME", path: "/post-utme" },
-    { label: "Support Us", path: "/support" },
   ];
 
   const filteredSuggestions = searchQuery
     ? searchSuggestions.filter(s => s.label.toLowerCase().includes(searchQuery.toLowerCase()))
-    : searchSuggestions;
+    : searchSuggestions.slice(0, 6);
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -45,6 +49,7 @@ const Navbar = () => {
       navigate(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
       setSearchQuery("");
       setShowSearch(false);
+      setIsOpen(false);
     }
   };
 
@@ -52,6 +57,7 @@ const Navbar = () => {
     navigate(path);
     setSearchQuery("");
     setShowSearch(false);
+    setIsOpen(false);
   };
 
   return (
@@ -80,20 +86,31 @@ const Navbar = () => {
             className="navbar-link navbar-whatsapp"
             onClick={() => setIsOpen(false)}
           >
-            <MessageCircle size={16} /> WhatsApp Updates
+            <MessageCircle size={16} /> WhatsApp
           </a>
           <Link
             to="/support"
             className="navbar-link navbar-support"
             onClick={() => setIsOpen(false)}
           >
-            <Coffee size={16} /> Support Us
+            <Coffee size={16} /> Support
           </Link>
         </nav>
 
         <div className="navbar-actions">
-          <div className="navbar-search" onClick={() => setShowSearch(!showSearch)}>
-            <Search size={18} />
+          <button 
+            className="theme-toggle" 
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+          >
+            {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
+          </button>
+
+          <div 
+            className={`navbar-search ${showSearch ? 'active' : ''}`} 
+            onClick={() => setShowSearch(!showSearch)}
+          >
+            <Search size={20} />
           </div>
 
           <button
@@ -101,7 +118,7 @@ const Navbar = () => {
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
       </div>
@@ -111,7 +128,7 @@ const Navbar = () => {
           <form onSubmit={handleSearch}>
             <input
               type="text"
-              placeholder="Search for JAMB, WAEC, NECO, Cut-off marks..."
+              placeholder="What are you looking for?"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               autoFocus
