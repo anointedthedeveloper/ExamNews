@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+.gitignore
+.zencoder
+.zenflow
+.node_modules
+.ACTION_CHECKLIST.md
+ADSENSE_COMPLIANCE_REPORT.md
