@@ -1,121 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://examnews.work.gd/</loc>
+    <loc>https://examnews.netlify.app/</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://examnews.work.gd/jamb</loc>
+    <loc>https://examnews.netlify.app/jamb</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://examnews.work.gd/waec</loc>
+    <loc>https://examnews.netlify.app/waec</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://examnews.work.gd/neco</loc>
+    <loc>https://examnews.netlify.app/neco</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://examnews.work.gd/cut-off-marks</loc>
+    <loc>https://examnews.netlify.app/cut-off-marks</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://examnews.work.gd/admission-status</loc>
+    <loc>https://examnews.netlify.app/admission-status</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://examnews.work.gd/jamb-centers</loc>
+    <loc>https://examnews.netlify.app/jamb-centers</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://examnews.work.gd/jamb-registration</loc>
+    <loc>https://examnews.netlify.app/jamb-registration</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://examnews.work.gd/jamb-syllabus</loc>
+    <loc>https://examnews.netlify.app/jamb-syllabus</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://examnews.work.gd/waec-timetable-2026</loc>
+    <loc>https://examnews.netlify.app/waec-timetable-2026</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://examnews.work.gd/neco-timetable-2026</loc>
+    <loc>https://examnews.netlify.app/neco-timetable-2026</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://examnews.work.gd/post-utme</loc>
+    <loc>https://examnews.netlify.app/post-utme</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://examnews.work.gd/check-jamb-result</loc>
+    <loc>https://examnews.netlify.app/check-jamb-result</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://examnews.work.gd/support</loc>
+    <loc>https://examnews.netlify.app/support</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://examnews.work.gd/about</loc>
+    <loc>https://examnews.netlify.app/about</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://examnews.work.gd/contact</loc>
+    <loc>https://examnews.netlify.app/contact</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://examnews.work.gd/hire-developer</loc>
+    <loc>https://examnews.netlify.app/hire-developer</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://examnews.work.gd/privacy-policy</loc>
+    <loc>https://examnews.netlify.app/privacy-policy</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://examnews.work.gd/terms-of-service</loc>
+    <loc>https://examnews.netlify.app/terms-of-service</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://examnews.work.gd/search</loc>
+    <loc>https://examnews.netlify.app/search</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
