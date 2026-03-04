@@ -40,7 +40,12 @@ const Footer = () => {
               <li><Link to="/admission-status">Check Admission</Link></li>
               <li><Link to="/check-jamb-result">JAMB Result</Link></li>
               <li><Link to="/jamb-centers">JAMB Centers</Link></li>
+              <li><Link to="/jamb-registration">JAMB Registration</Link></li>
+              <li><Link to="/jamb-syllabus">JAMB Syllabus</Link></li>
+              <li><Link to="/jamb-brochure">JAMB Brochure</Link></li>
+              <li><Link to="/post-utme">Post-UTME News</Link></li>
               <li><Link to="/waec-timetable-2026">WAEC Timetable</Link></li>
+              <li><Link to="/neco-timetable-2026">NECO Timetable</Link></li>
             </ul>
           </div>
 

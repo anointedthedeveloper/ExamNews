@@ -1,8 +1,10 @@
 import { Routes, Route } from "react-router-dom";
 import { lazy, Suspense, useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 import CookieConsent from "./components/CookieConsent";
 import ErrorBoundary from "./components/ErrorBoundary";
 import PageIndicator from "./components/PageIndicator";
@@ -63,6 +65,7 @@ const LoadingFallback = () => (
 
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
@@ -73,42 +76,50 @@ function App() {
     setTheme(prev => prev === 'light' ? 'dark' : 'light');
   };
 
+  const toggleSidebar = () => {
+    setIsSidebarOpen(prev => !prev);
+  };
+
   return (
     <ErrorBoundary>
       <div className={`app-wrapper ${theme}`}>
         <PageIndicator />
         <ScrollToTop />
-        <Navbar theme={theme} toggleTheme={toggleTheme} />
-        <main>
-          <Suspense fallback={<LoadingFallback />}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/jamb" element={<Jamb />} />
-              <Route path="/waec" element={<Waec />} />
-              <Route path="/neco" element={<Neco />} />
-              <Route path="/cut-off-marks" element={<CutOffMarks />} />
-              <Route path="/admission-status" element={<AdmissionStatus />} />
-              <Route path="/check-jamb-result" element={<JambResult />} />
-              <Route path="/waec-timetable-2026" element={<WaecTimetable />} />
-              <Route path="/jamb-centers" element={<JambCenters />} />
-              <Route path="/jamb-syllabus" element={<JambSyllabus />} />
-              <Route path="/jamb-registration" element={<JambRegistration />} />
-              <Route path="/jamb-brochure" element={<JambBrochure />} />
-              <Route path="/jamb-brochure/courses/:id" element={<BrochureCourses />} />
-              <Route path="/neco-timetable-2026" element={<NecoTimetable />} />
-              <Route path="/post-utme" element={<PostUtme />} />
-              <Route path="/search" element={<SearchResults />} />
-              <Route path="/support" element={<Support />} />
-              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-              <Route path="/terms-of-service" element={<TermsOfService />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/hire-developer" element={<HireDeveloper />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Suspense>
-        </main>
+        <Navbar theme={theme} toggleTheme={toggleTheme} isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+        <div className="main-layout" style={{ display: 'flex', marginTop: '80px' }}>
+          <Sidebar isOpen={isSidebarOpen} />
+          <main style={{ flex: 1, minHeight: 'calc(100vh - 80px)' }}>
+            <Suspense fallback={<LoadingFallback />}>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/jamb" element={<Jamb />} />
+                <Route path="/waec" element={<Waec />} />
+                <Route path="/neco" element={<Neco />} />
+                <Route path="/cut-off-marks" element={<CutOffMarks />} />
+                <Route path="/admission-status" element={<AdmissionStatus />} />
+                <Route path="/check-jamb-result" element={<JambResult />} />
+                <Route path="/waec-timetable-2026" element={<WaecTimetable />} />
+                <Route path="/jamb-centers" element={<JambCenters />} />
+                <Route path="/jamb-syllabus" element={<JambSyllabus />} />
+                <Route path="/jamb-registration" element={<JambRegistration />} />
+                <Route path="/jamb-brochure" element={<JambBrochure />} />
+                <Route path="/jamb-brochure/courses/:id" element={<BrochureCourses />} />
+                <Route path="/brochure-courses" element={<BrochureCourses />} />
+                <Route path="/neco-timetable-2026" element={<NecoTimetable />} />
+                <Route path="/post-utme" element={<PostUtme />} />
+                <Route path="/search" element={<SearchResults />} />                <Route path="/support" element={<Support />} />
+                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                <Route path="/terms-of-service" element={<TermsOfService />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/hire-developer" element={<HireDeveloper />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </Suspense>
+          </main>
+        </div>
         <Footer />
+        <ScrollToTopButton />
         <CookieConsent />
         <AnnouncementBanner />
       </div>
